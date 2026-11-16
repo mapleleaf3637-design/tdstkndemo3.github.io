@@ -1,0 +1,23 @@
+THE LOST ELEPHANT ARCHIVE - COMPLETE DEMO3 REPAIR
+
+Why the desktop page showed a giant phone icon:
+The repo tdstkndemo3.github.io had index.html, but did not have the css/, js/, and assets/ directories. HTML without global.css displayed the rotate-phone SVG at its default size. This is not a mobile responsive CSS defect.
+
+THIS ZIP CONTAINS THE FULL WEBSITE, including the Prologue, seven-image Epilogue, desktop and mobile styles, and every referenced asset.
+
+RECOMMENDED UPLOAD - GITHUB DESKTOP
+1. Install/open GitHub Desktop, sign into the correct GitHub account.
+2. File > Clone repository > URL: https://github.com/mapleleaf3637-design/tdstkndemo3.github.io
+3. Click Repository > Show in Explorer to open the cloned local folder.
+4. Extract THIS ZIP to a separate temporary folder.
+5. Open that extracted folder and COPY EVERYTHING INSIDE it (index.html, css/, js/, assets/, manifest.webmanifest, etc.) into the CLONED REPOSITORY FOLDER. Overwrite duplicate files when prompted.
+6. Check that css/global.css, js/main.js, js/components/ProloguePlayer.js, assets/prologue/1.png, and assets/epilogue/epilogue_05.png now exist in the cloned folder.
+7. In GitHub Desktop, enter a commit summary, e.g. Restore complete website, then click Commit to main > Push origin.
+8. After the GitHub Pages deployment finishes, refresh the site with Ctrl + Shift + R or use an incognito tab.
+
+IMPORTANT
+- Do NOT upload the ZIP file itself to GitHub: unzip it first.
+- Do NOT upload individual files to the repository root. Keep all subfolders.
+- Extra duplicate files already at the repo root may remain temporarily. They are not loaded by the website.
+- No GitHub Pages configuration change should be needed if branch=main and folder=/(root).
+- Stage 1 and Stage 2 remain placeholders; Epilogue is gated until their progress is legitimately completed.

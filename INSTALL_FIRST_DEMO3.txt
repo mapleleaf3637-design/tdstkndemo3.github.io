@@ -1,0 +1,41 @@
+DEMO 3: FULL WEBSITE RECOVERY + EPILOGUE PREVIEW
+===============================================
+
+This is the COMPLETE web app, not the 4-file Preview patch alone.
+It includes all prologue images, all 7 epilogue images, CSS, JS and index.html.
+
+INSTALL USING GITHUB DESKTOP (IMPORTANT)
+1. In GitHub Desktop, select repository: tdstkndemo3.github.io
+2. Click Repository > Show in Explorer. This opens your local repository folder.
+3. Extract THIS ZIP into a separate, temporary folder.
+4. Open the extracted folder, select ALL its contents (not the enclosing folder).
+5. Copy and paste those contents INTO your LOCAL GitHub repository folder.
+6. Select REPLACE files if Windows asks. Do NOT delete the repository's .git folder.
+7. Go to GitHub Desktop > Changes. You should see index.html and folders css/, js/, assets/.
+   If you only see Epilogue.js / router.js / epilogue.css, stop: you copied the wrong folder.
+8. Enter Summary: Restore complete Demo 3 with Epilogue Preview
+9. Click Commit to main, then Push origin.
+10. Open your GitHub repository in a web browser. Confirm that at the TOP LEVEL you see
+    index.html, css/, js/, and assets/.
+11. Wait for Actions > pages build and deployment to show a green checkmark.
+12. Play the preview at:
+    https://mapleleaf3637-design.github.io/tdstkndemo3.github.io/#/epilogue-preview
+    (or add ?v=3 BEFORE the # to bypass browser cache).
+
+IMPORTANT ROUTES
+- Ordinary homepage starts Prologue by design.
+- #/epilogue-preview launches the isolated, no-save Epilogue preview.
+- #/epilogue is locked until the real game is completed.
+
+EXAMPLE CORRECT REPOSITORY LAYOUT
+/index.html
+/css/global.css
+/css/prologue.css
+/css/epilogue.css
+/js/main.js
+/js/router.js
+/js/screens/Epilogue.js
+/assets/prologue/1.png
+/assets/epilogue/epilogue_05.png
+
+This file is only a setup note. It is safe to keep in the repository.

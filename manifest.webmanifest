@@ -1,0 +1,30 @@
+{
+  "id": "./",
+  "name": "The Lost Elephant Archive – Hồ sơ voi thất lạc",
+  "short_name": "Elephant Archive",
+  "description": "Visual novel về voi Tây Nguyên và những tri thức thất lạc.",
+  "lang": "vi",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone"
+  ],
+  "orientation": "landscape",
+  "background_color": "#12242b",
+  "theme_color": "#142c31",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

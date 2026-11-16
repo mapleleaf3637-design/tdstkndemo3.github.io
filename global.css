@@ -1,0 +1,107 @@
+:root {
+  color-scheme: dark;
+  --paper: #F2E8D5;
+  --brown: #44362B;
+  --forest: #536B51;
+  --terra: #A65E45;
+  --gold: #C59A58;
+  --charcoal: #282A28;
+  --night: #12242b;
+  --mint: #b8d6c4;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: var(--night); }
+body { overscroll-behavior: none; }
+button { font: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+button:focus-visible { outline: 3px solid #e8d59c; outline-offset: 4px; }
+button:disabled { cursor: not-allowed; opacity: .54; }
+[hidden] { display: none !important; }
+.game-root { position: fixed; inset: 0; width: 100%; height: 100dvh; overflow: hidden; isolation: isolate; }
+.sr-only { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+.eyebrow { color: var(--gold); font-family: "Courier New", monospace; font-weight: 700; font-size: .75rem; letter-spacing: .16em; }
+
+.primary-button, .subtle-button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  min-height: 48px;
+  padding: 11px 22px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+.primary-button { background: var(--gold); color: #1f2c2c; box-shadow: 0 9px 30px rgba(0,0,0,.18); }
+.primary-button:hover { background: #e0bf81; transform: translateY(-1px); }
+.subtle-button { background: rgba(242,232,213,.055); color: var(--paper); border-color: rgba(242,232,213,.24); }
+.subtle-button:hover { background: rgba(242,232,213,.15); border-color: rgba(242,232,213,.54); }
+
+.rotate-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: radial-gradient(circle at center, #243e45, #0f2229 72%);
+  align-items: center;
+  justify-content: center;
+  color: var(--paper);
+  text-align: center;
+  padding: 24px;
+}
+.rotate-card { width: min(100%, 380px); }
+.rotate-icon { margin: 0 auto 15px; width: 108px; height: 108px; color: #d6e5d8; }
+.rotate-icon svg { width: 100%; height: 100%; }
+.rotate-card .eyebrow { font-size: 10px; }
+.rotate-card h1 { margin: 8px 0 12px; font-size: 25px; }
+.rotate-card p:not(.eyebrow) { color: #b9c6c5; line-height: 1.55; font-size: 15px; margin: 0 0 26px; }
+.rotate-card .subtle-button { font-size: 12px; }
+
+@media (orientation: portrait) and (max-width: 850px) {
+  body:not(.allow-portrait) .rotate-overlay { display: flex; }
+}
+@media (orientation: portrait) and (max-width: 850px) {
+  body.allow-portrait .game-root { overflow-y: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Mobile browser viewport: dVH shrinks correctly when URL bars are visible.
+   Use --game-viewport-height as a single source of truth, including Fullscreen. */
+html, body { min-height: 100%; overscroll-behavior: none; }
+.game-root { height: 100vh; height: 100dvh; inset: 0 0 auto 0; }
+@supports (height: 100svh) {
+  .rotate-overlay { min-height: 100svh; }
+}
+.game-fullscreen {
+  display: inline-grid; place-items: center; flex: 0 0 auto;
+  width: 40px; height: 40px; min-width: 40px;
+  padding: 9px;
+  border: 1px solid rgba(235,227,196,.45); border-radius: 5px;
+  background: rgba(12,35,40,.76); color: #f4e2b5;
+  touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+}
+.game-fullscreen svg { width: 20px; height: 20px; }
+.game-fullscreen:hover, .game-fullscreen[aria-pressed="true"] { background: rgba(38,69,68,.96); border-color: var(--gold); }
+.game-fullscreen[hidden] { display: none !important; }
+.immersive-notice {
+  position: fixed; z-index: 1001;
+  top: calc(58px + var(--safe-t)); right: calc(12px + var(--safe-r));
+  max-width: min(460px, calc(100vw - 24px));
+  padding: 12px 15px;
+  background: rgba(13,36,41,.96); border: 1px solid var(--gold);
+  border-radius: 6px; color: var(--paper); line-height: 1.45;
+  font-size: 12px; box-shadow: 0 8px 28px #0007;
+}
+.immersive-notice[hidden] { display: none !important; }
+@media (max-height: 530px) and (orientation: landscape) {
+  .game-fullscreen { width: 38px; height: 38px; min-width: 38px; padding: 8px; }
+}
